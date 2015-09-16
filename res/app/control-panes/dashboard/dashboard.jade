@@ -1,7 +1,7 @@
-//.row
-  .col-md-6(ng-if='$root .platform == "native"')
-    div(ng-include='"control-panes/dashboard/xshell/shell.jade"')
-  .col-md-6
+.row
+  .col-md-12(ng-if='$root .platform == "native"')
+    div(ng-include='"control-panes/dashboard/h12/h12.jade"')
+  //.col-md-6
     div(ng-include='"control-panes/dashboard/clipboard/clipboard.jade"')
 
 .row

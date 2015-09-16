@@ -1,4 +1,4 @@
-describe('ShellCtrl', function () {
+describe('H12Ctrl', function () {
 
   beforeEach(angular.mock.module(require('./').name))
 
@@ -6,7 +6,7 @@ describe('ShellCtrl', function () {
 
   beforeEach(inject(function ($rootScope, $controller) {
     scope = $rootScope.$new()
-    ctrl = $controller('ShellCtrl', {$scope: scope})
+    ctrl = $controller('H12Ctrl', {$scope: scope})
   }))
 
   it('should clear the results', inject(function () {

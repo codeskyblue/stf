@@ -1,20 +1,27 @@
-.widget-container.fluid-height.stf-shell(ng-controller='ShellCtrl')
+.widget-container.fluid-height.stf-shell(ng-controller='H12Ctrl')
   .heading
     stacked-icon(icon='fa-terminal', color='color-darkgray')
-    span(translate) XShell
+    span(translate) H12
     clear-button(ng-click='clear()', ng-disabled='!command && !data').btn-xs
     help-icon(topic='Remote-Shell', tooltip='{{"Executes remote shell commands" | translate}}')
 
   .widget-content.padded
-    form(method='post', enable-autofill, ng-submit='touch(filepath)')
+    //form(method='post', enable-autofill, ng-submit='touch(filepath)')
+
+    div
       .input-group.form-inline
-        input(type=text, ng-model='filepath',
+        input(type=text, ng-model='pkgName',
           spellcheck='false').form-control
         span.input-group-btn
-          button.btn.btn-primary-outline(type='submit', ng-disabled='!filepath') touch file
-
+          button.btn.btn-primary-outline(ng-click='updatePkgName()') GetPackageName
+      div
+        label 标记为
+        button.btn.btn-xm(ng-click='createF1(pkgName)') Test
+        button.btn.btn-xm(ng-click='createF2(pkgName)') Stable
+        button.btn.btn-xm(ng-click='removeFlag(pkgName)') Remove
+        label {{message}}
     // NOTE: autofill doesn't work here
-    form(method='post', enable-autofill, ng-submit='run(command)')
+    //form(method='post', enable-autofill, ng-submit='run(command)')
       .input-group.form-inline
         input(type=text, ng-model='command', Xtext-focus-select,
           autocapitalize='off', spellcheck='false',
