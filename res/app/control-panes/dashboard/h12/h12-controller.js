@@ -33,7 +33,9 @@ module.exports = function H12Ctrl($scope) {
           body = body.substr(0, body.length-3);
         }
         $scope.$apply(function(){
-          callback({data: body, success: success});
+          if(callback && typeof callback === 'function'){
+            callback({data: body, success: success});
+          }
         })
       })
   }
@@ -62,7 +64,7 @@ module.exports = function H12Ctrl($scope) {
     var command = ['monkey', '-p', $scope.pkgName, 
       '-c', 'android.intent.category.LAUNCHER', '1'].join(' ');
     shell(command, function(res){
-      
+      console.log(res.success);
     })
   }
 
@@ -72,27 +74,39 @@ module.exports = function H12Ctrl($scope) {
 
   var flagFile = '/files/netease/txx/Documents/super_solenoid_engine';
   var flagPrefix = '/sdcard/Android/data/'
-  $scope.createF1 = function(pkgName){
-    var filepath = flagPrefix + pkgName + flagFile;
+  $scope.createF1 = function(){
+    var filepath = flagPrefix + $scope.pkgName + flagFile;
     shell('echo > ' + filepath, function(res){
       notify("Set test: " + filepath + " " + (res.success ? "Success": "Failure"));
     })
   }
 
-  $scope.createF2 = function(pkgName){
-    var filepath = flagPrefix + pkgName + flagFile;
+  $scope.createF2 = function(){
+    var filepath = flagPrefix + $scope.pkgName + flagFile;
     shell('echo EVA-01 > ' + filepath, function(res){
       notify("Write data 'EVA-01' to " + filepath + " " + (res.success ? "Success": "Failure"));
     })
   }
 
-  $scope.removeFlag = function(pkgName){
-    var filepath = flagPrefix + pkgName + flagFile;
+  $scope.removeFlag = function(){
+    var filepath = flagPrefix + $scope.pkgName + flagFile;
     shell('rm ' + filepath, function(res){
       notify("Remove " + filepath + " " + (res.success ? "Success": "Failure"));
     })
   }
 
+  $scope.retriveLog = function() {
+    var file = flagPrefix + $scope.pkgName + '/files/netease/txx/Documents/log.txt';
+    $scope.control.fsretrive(file)
+      .then(function(result){
+        // console.log(result);
+        location.href = result.body.href+"?download"
+      })
+      .catch(function(err){
+        console.log(err.message);
+        alert(err.message);
+      })
+  }
   $scope.clear = function () {
     $scope.command = ''
     $scope.data = ''

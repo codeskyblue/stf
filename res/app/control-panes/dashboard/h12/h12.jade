@@ -30,9 +30,10 @@
 
       div
         label 标记为
-        button.btn.btn-xm(ng-click='createF1(pkgName)') Test
-        button.btn.btn-xm(ng-click='createF2(pkgName)') Stable
-        button.btn.btn-xm(ng-click='removeFlag(pkgName)') Remove
+        button.btn.btn-xm(ng-click='createF1()') Test
+        button.btn.btn-xm(ng-click='createF2()') Stable
+        button.btn.btn-xm(ng-click='removeFlag()') Remove
+        button.btn.btn-xm(ng-click='retriveLog()') Retrive
         label {{message}}
     // NOTE: autofill doesn't work here
     //form(method='post', enable-autofill, ng-submit='run(command)')
