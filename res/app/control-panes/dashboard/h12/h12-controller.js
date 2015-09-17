@@ -40,11 +40,29 @@ module.exports = function H12Ctrl($scope) {
 
   $scope.pkgName = "com.netease.txx"
 
-  $scope.updatePkgName = function(){
+  $scope.updateApp = function(){
     shell("dumpsys activity top", function(res){
       var m = res.data.match(/\s*ACTIVITY ([A-Za-z0-9_.]+)\/([A-Za-z0-9_.]+) \w+ pid=(\d+)/)
       console.log(m[1]);
       $scope.pkgName = m[1];
+      $scope.pkgActivity = m[2];
+      $scope.pkgPid = m[3];
+    })
+  }
+
+  $scope.killApp = function(){
+    shell("am force-stop "+$scope.pkgName, function(res){
+      if (res.success){
+        $scope.pkgPid = "";
+      }
+    })
+  }
+
+  $scope.startApp = function(){
+    var command = ['monkey', '-p', $scope.pkgName, 
+      '-c', 'android.intent.category.LAUNCHER', '1'].join(' ');
+    shell(command, function(res){
+      
     })
   }
 
@@ -57,7 +75,6 @@ module.exports = function H12Ctrl($scope) {
   $scope.createF1 = function(pkgName){
     var filepath = flagPrefix + pkgName + flagFile;
     shell('echo > ' + filepath, function(res){
-    // shell('echo > /sdcard/hello', function(res){
       notify("Set test: " + filepath + " " + (res.success ? "Success": "Failure"));
     })
   }

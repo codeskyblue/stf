@@ -10,10 +10,24 @@
 
     div
       .input-group.form-inline
-        input(type=text, ng-model='pkgName',
-          spellcheck='false').form-control
-        span.input-group-btn
-          button.btn.btn-primary-outline(ng-click='updatePkgName()') GetPackageName
+        span.input-group-addon Pid
+        input(type=text, ng-model='pkgPid').form-control
+      .input-group.form-inline
+        span.input-group-addon Activity
+        input(type=text, ng-model='pkgActivity').form-control
+      .input-group.form-inline
+        span.input-group-addon PackageName
+        input(type=text, ng-model='pkgName', spellcheck='false').form-control  
+      button.btn.btn-primary-outline(ng-click='updateApp()')
+        stacked-icon(icon='fa-info')
+        span(translate) AppInfo
+      button.btn.btn-primary-outline(ng-click='startApp()', ng-disabled='!pkgName')
+        stacked-icon(icon='fa-play')
+        span(translate) StartApp
+      button.btn.btn-primary-outline(ng-click='killApp()', ng-disabled='!pkgName')
+        stacked-icon(icon='fa-remove')
+        span(translate) KillApp
+
       div
         label 标记为
         button.btn.btn-xm(ng-click='createF1(pkgName)') Test

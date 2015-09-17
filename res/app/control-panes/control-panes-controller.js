@@ -36,6 +36,12 @@ module.exports =
         icon: 'fa-dashboard fa-fw color-pink',
         templateUrl: 'control-panes/dashboard/dashboard.jade',
         filters: ['native', 'web']
+      },
+      {
+        title: gettext('Logs'),
+        icon: 'fa-list-alt color-red',
+        templateUrl: 'control-panes/logs/logs.jade',
+        filters: ['native', 'web']
       }
     ].concat(angular.copy(sharedTabs))
 
