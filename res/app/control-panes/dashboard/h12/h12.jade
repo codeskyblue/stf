@@ -20,13 +20,13 @@
         input(type=text, ng-model='pkgName', spellcheck='false').form-control  
       button.btn.btn-primary-outline(ng-click='updateApp()')
         stacked-icon(icon='fa-info')
-        span(translate) AppInfo
+        span(translate) App Info
       button.btn.btn-primary-outline(ng-click='startApp()', ng-disabled='!pkgName')
         stacked-icon(icon='fa-play')
-        span(translate) StartApp
+        span(translate) Start App
       button.btn.btn-primary-outline(ng-click='killApp()', ng-disabled='!pkgName')
         stacked-icon(icon='fa-remove')
-        span(translate) KillApp
+        span(translate) Kill App
 
       div
         label 标记为
