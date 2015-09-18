@@ -1453,7 +1453,7 @@ msgstr ""
 
 #: app/control-panes/info/info.html:1
 msgid "Using Fallback"
-msgstr "使用回退"
+msgstr ""
 
 #: app/control-panes/info/info.html:1
 msgid "Version"
