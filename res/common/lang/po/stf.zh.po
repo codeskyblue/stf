@@ -155,7 +155,7 @@ msgstr "电池电量"
 
 #: app/device-list/column/device-column-service.js:210
 msgid "Battery Source"
-msgstr ""
+msgstr "供电"
 
 #: app/device-list/column/device-column-service.js:218
 msgid "Battery Status"
@@ -171,7 +171,7 @@ msgstr "蓝牙"
 
 #: app/device-list/column/device-column-service.js:153
 msgid "Browser"
-msgstr ""
+msgstr "浏览器"
 
 #: app/components/stf/device/device-info-filter/index.js:12
 #: app/components/stf/device/device-info-filter/index.js:27
@@ -255,7 +255,7 @@ msgstr "核心数"
 
 #: app/device-list/device-list.html:1
 msgid "Customize"
-msgstr ""
+msgstr "选择列"
 
 #: app/control-panes/advanced/input/input.html:1
 msgid "D-pad Center"
@@ -742,7 +742,7 @@ msgstr ""
 
 #: app/device-list/column/device-column-service.js:256
 msgid "Notes"
-msgstr ""
+msgstr "备注"
 
 #: app/control-panes/inspect/inspect.html:1
 msgid "Nothing to inspect"
@@ -805,11 +805,11 @@ msgstr "手机"
 
 #: app/device-list/column/device-column-service.js:196
 msgid "Phone ICCID"
-msgstr ""
+msgstr "手机ICCID"
 
 #: app/device-list/column/device-column-service.js:190
 msgid "Phone IMEI"
-msgstr ""
+msgstr "手机IMEI"
 
 #: app/control-panes/info/info.html:1
 msgid "Physical Device"
