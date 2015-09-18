@@ -139,6 +139,7 @@ msgstr ""
 msgid "Battery Health"
 msgstr ""
 
+#: app/control-panes/info/info.html:1
 #: app/device-list/column/device-column-service.js:226
 msgid "Battery Level"
 msgstr ""
@@ -153,6 +154,10 @@ msgstr ""
 
 #: app/device-list/column/device-column-service.js:239
 msgid "Battery Temp"
+msgstr ""
+
+#: app/control-panes/info/info.html:1
+msgid "Bettery Status"
 msgstr ""
 
 #: app/components/stf/device/device-info-filter/index.js:89
@@ -575,7 +580,6 @@ msgstr ""
 msgid "Launching activity..."
 msgstr ""
 
-#: app/control-panes/info/info.html:1
 #: app/control-panes/logs/logs.html:1
 msgid "Level"
 msgstr ""
@@ -612,6 +616,10 @@ msgstr ""
 #: app/control-panes/info/info.html:1
 #: app/device-list/column/device-column-service.js:165
 msgid "Manufacturer"
+msgstr ""
+
+#: app/control-panes/screenshots/screenshots.html:5
+msgid "Max number of captured images&quot;|translate}\" class=\"input-sm\"/><clear-button ng-click=\"clear()\" ng-disabled=\"!screenshots.length\"></clear-button><div class=\"button-spacer\"></div><div class=\"pull-right\"><button ng-click=\"zoom({min: 40, step: -50})\" ng-disabled=\"!screenshots.length\" class=\"btn btn-primary-outline btn-sm transparent-border\"><i class=\"fa fa-minus\"></i></button><input type=\"range\" ng-model=\"screenShotSize\" min=\"40\" max=\"480\" step=\"10\" ng-model-options=\"{ updateOn: &quot;default blur&quot;, debounce: { default: 100, blur: 0} }\" ng-disabled=\"!screenshots.length\" class=\"zoom-range\"/><button ng-click=\"zoom({max: 480, step: 50})\" ng-disabled=\"!screenshots.length\" class=\"btn btn-primary-outline btn-sm transparent-border\"><i class=\"fa fa-plus\"></i></button></div></div><div class=\"widget-content padded\"><nothing-to-show message=\"{{&quot;No screenshots taken"
 msgstr ""
 
 #: app/control-panes/advanced/input/input.html:1
@@ -718,10 +726,6 @@ msgstr ""
 
 #: app/components/stf/common-ui/modals/lightbox-image/lightbox-image.html:1
 msgid "No photo available"
-msgstr ""
-
-#: app/control-panes/screenshots/screenshots.html:5
-msgid "No screenshots taken"
 msgstr ""
 
 #: app/control-panes/automation/device-settings/device-settings.html:1
@@ -1108,11 +1112,14 @@ msgstr ""
 msgid "Start App"
 msgstr ""
 
+#: app/control-panes/screenshots/screenshots.html:5
+msgid "Start Capture"
+msgstr ""
+
 #: app/control-panes/logs/logs.html:1
 msgid "Start/Stop Logging"
 msgstr ""
 
-#: app/control-panes/info/info.html:1
 #: app/device-list/column/device-column-service.js:25
 msgid "Status"
 msgstr ""
@@ -1120,6 +1127,10 @@ msgstr ""
 #: app/control-panes/advanced/input/input.html:1
 #: app/control-panes/logs/logs.html:1
 msgid "Stop"
+msgstr ""
+
+#: app/control-panes/screenshots/screenshots.html:5
+msgid "Stop Capture"
 msgstr ""
 
 #: app/components/stf/device-context-menu/device-context-menu.html:1
@@ -1156,7 +1167,7 @@ msgid "Take Screenshot"
 msgstr ""
 
 #: app/control-panes/screenshots/screenshots.html:5
-msgid "Take Screenshot Continous"
+msgid "Take Screenshot Continuously"
 msgstr ""
 
 #: app/control-panes/info/info.html:1
@@ -1484,8 +1495,4 @@ msgstr ""
 #: app/components/stf/common-ui/modals/fatal-message/fatal-message.html:1
 #: app/control-panes/resources/resources.html:1
 msgid "translate"
-msgstr ""
-
-#: app/control-panes/screenshots/screenshots.html:5
-msgid "{{capturePromise ? \"StopCapture\" : \"ScreenCapture\"}}"
 msgstr ""

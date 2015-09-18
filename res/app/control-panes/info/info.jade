@@ -39,10 +39,10 @@
               td(translate) Power Source
               td {{device.battery.source | batterySource | translate}}
             tr
-              td(translate) Status
+              td(translate) Bettery Status
               td {{device.battery.status | batteryStatus | translate}}
             tr
-              td(translate) Level
+              td(translate) Battery Level
               td
                 progressbar(value='device.battery.level', animate='false', max='device.battery.scale', type='success')
                   span {{ device.battery.level / device.battery.scale * 100 }}%
