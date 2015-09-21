@@ -42,7 +42,8 @@ module.exports = function H12Ctrl($scope) {
 
   $scope.pkgName = "com.netease.txx"
   var flagFile = '/files/netease/txx/Documents/super_solenoid_engine';
-  var flagPrefix = '/sdcard/Android/data/'
+  var flagPrefix = '/sdcard/Android/data/';
+  $scope.pkgLog = '/sdcard/Android/data/com.netease.txx/files/netease/txx/log.txt';
 
   $scope.updateApp = function(){
     shell("dumpsys activity top", function(res){
@@ -51,7 +52,7 @@ module.exports = function H12Ctrl($scope) {
       $scope.pkgName = m[1];
       $scope.pkgActivity = m[2];
       $scope.pkgPid = m[3];
-      $scope.pkgLog = flagPrefix + $scope.pkgName + '/files/netease/txx/Documents/log.txt';
+      $scope.pkgLog = flagPrefix + $scope.pkgName + '/files/netease/txx/log.txt';
     })
   }
 
