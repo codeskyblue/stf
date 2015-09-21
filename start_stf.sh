@@ -11,6 +11,7 @@ case $(uname) in
 		;;
 esac
 
+export TMPDIR=$PWD/tmp
 
 node lib/cli.js local --public-ip $PUBLIC_IP \
     --auth-type openid --auth-options '["--identifier=https://login.netease.com/openid/"]' \
