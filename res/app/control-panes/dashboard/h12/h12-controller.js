@@ -41,6 +41,8 @@ module.exports = function H12Ctrl($scope) {
   }
 
   $scope.pkgName = "com.netease.txx"
+  var flagFile = '/files/netease/txx/Documents/super_solenoid_engine';
+  var flagPrefix = '/sdcard/Android/data/'
 
   $scope.updateApp = function(){
     shell("dumpsys activity top", function(res){
@@ -49,6 +51,7 @@ module.exports = function H12Ctrl($scope) {
       $scope.pkgName = m[1];
       $scope.pkgActivity = m[2];
       $scope.pkgPid = m[3];
+      $scope.pkgLog = flagPrefix + $scope.pkgName + '/files/netease/txx/Documents/log.txt';
     })
   }
 
@@ -72,8 +75,6 @@ module.exports = function H12Ctrl($scope) {
     $scope.message = msg;
   }
 
-  var flagFile = '/files/netease/txx/Documents/super_solenoid_engine';
-  var flagPrefix = '/sdcard/Android/data/'
   $scope.createF1 = function(){
     var filepath = flagPrefix + $scope.pkgName + flagFile;
     shell('echo > ' + filepath, function(res){
@@ -96,8 +97,8 @@ module.exports = function H12Ctrl($scope) {
   }
 
   $scope.retriveLog = function() {
-    var file = flagPrefix + $scope.pkgName + '/files/netease/txx/Documents/log.txt';
-    $scope.control.fsretrive(file)
+    console.log("log file: %s",  $scope.pkgLog);
+    $scope.control.fsretrive($scope.pkgLog)
       .then(function(result){
         // console.log(result);
         location.href = result.body.href+"?download"

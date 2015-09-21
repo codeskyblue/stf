@@ -33,6 +33,9 @@
         button.btn.btn-xm(ng-click='createF1()') Test
         button.btn.btn-xm(ng-click='createF2()') Stable
         button.btn.btn-xm(ng-click='removeFlag()') Remove
+
+      div
+        input(type=text, ng-model='pkgLog').form-control
         button.btn.btn-xm(ng-click='retriveLog()') Retrive Log
         label {{message}}
     // NOTE: autofill doesn't work here
