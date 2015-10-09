@@ -10,12 +10,6 @@
 
     div
       .input-group.form-inline
-        span.input-group-addon Pid
-        input(type=text, ng-model='pkgPid').form-control
-      .input-group.form-inline
-        span.input-group-addon Activity
-        input(type=text, ng-model='pkgActivity').form-control
-      .input-group.form-inline
         span.input-group-addon PackageName
         input(type=text, ng-model='pkgName', spellcheck='false').form-control  
       button.btn.btn-primary-outline(ng-click='updateApp()')
@@ -29,15 +23,15 @@
         span(translate) Kill App
 
       div
-        label 标记为
-        button.btn.btn-xm(ng-click='createF1()') Test
-        button.btn.btn-xm(ng-click='createF2()') Stable
-        button.btn.btn-xm(ng-click='removeFlag()') Remove
+        label 快速设置
+        button.btn.btn-xm(ng-click='createF2()') 设置成开发模式
+        button.btn.btn-xm(ng-click='removeFlag()') 删除标记
 
       div
         input(type=text, ng-model='pkgLog').form-control
-        button.btn.btn-xm(ng-click='retriveLog()') Retrive Log
+        button.btn.btn-xm(ng-click='retriveLog()') 下载日志
         label {{message}}
+        
     // NOTE: autofill doesn't work here
     //form(method='post', enable-autofill, ng-submit='run(command)')
       .input-group.form-inline

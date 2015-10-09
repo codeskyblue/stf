@@ -1,22 +1,22 @@
 .row
-  .col-md-6(ng-if='$root .platform == "native"')
-    div(ng-include='"control-panes/dashboard/h12/h12.jade"')
-  .col-md-6
-    div(ng-include='"control-panes/dashboard/topapp/topapp.jade"')
-
-.row
-  .col-md-6
-    div(ng-include='"control-panes/dashboard/navigation/navigation.jade"')
-  .col-md-6
-    div(ng-include='"control-panes/dashboard/clipboard/clipboard.jade"')
-
-.row
   .col-md-6
     div(ng-include='"control-panes/dashboard/install/install.jade"')
   .col-md-6(ng-if='$root.platform == "native"')
     div(ng-include='"control-panes/dashboard/shell/shell.jade"')
+
 .row
   .col-md-6
-    div(ng-include='"control-panes/dashboard/apps/apps.jade"')
+    div(ng-include='"control-panes/dashboard/topapp/topapp.jade"')
   .col-md-6
     div(ng-include='"control-panes/advanced/remote-debug/remote-debug.jade"')
+      
+.row
+  .col-md-6(ng-if='$root .platform == "native"')
+    div(ng-include='"control-panes/dashboard/h12/h12.jade"')
+  //.col-md-6
+    div(ng-include='"control-panes/dashboard/apps/apps.jade"')
+//.row
+  .col-md-6
+    div(ng-include='"control-panes/dashboard/navigation/navigation.jade"')
+  .col-md-6
+    div(ng-include='"control-panes/dashboard/clipboard/clipboard.jade"')
