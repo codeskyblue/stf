@@ -1,4 +1,4 @@
-describe('FsCtrl', function () {
+describe('VNCCtrl', function () {
 
   beforeEach(angular.mock.module(require('./').name));
 
@@ -6,7 +6,7 @@ describe('FsCtrl', function () {
 
   beforeEach(inject(function ($rootScope, $controller) {
     scope = $rootScope.$new();
-    ctrl = $controller('FsCtrl', {$scope: scope});
+    ctrl = $controller('VNCCtrl', {$scope: scope});
   }));
 
   it('should ...', inject(function () {
