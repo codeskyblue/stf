@@ -7,7 +7,7 @@ case $(uname) in
 		PUBLIC_IP=$(ipconfig getifaddr en0)
 		;;
 	Linux)
-		PUBLIC_IP=$(hostname -i)
+		PUBLIC_IP=$(/sbin/ifconfig | grep 'inet ' | grep -v '127.0' | grep -v ":172\.*" | awk '{print $2}' | cut -d: -f2)
 		;;
 esac
 
